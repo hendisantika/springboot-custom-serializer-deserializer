@@ -7,6 +7,8 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import static com.hendisantika.springbootcustomserializerdeserializer.SpringbootCustomSerializerDeserializerApplication.CUSTOM_API;
+
 /**
  * Created by IntelliJ IDEA.
  * Project : springboot-custom-serializer-deserializer
@@ -18,8 +20,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Configuration
 public class RequestsHandlerInterceptorAdapterConfig extends HandlerInterceptorAdapter {
-    public static final String CUSTOM_API = "custom-api";
-
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         MDC.put(CUSTOM_API, request.getHeader(CUSTOM_API));
