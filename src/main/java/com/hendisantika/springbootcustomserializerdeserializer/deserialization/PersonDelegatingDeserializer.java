@@ -37,4 +37,9 @@ public class PersonDelegatingDeserializer extends DelegatingDeserializer {
         }
     }
 
+    @Override
+    protected JsonDeserializer<?> newDelegatingInstance(JsonDeserializer<?> jsonDeserializer) {
+        return jsonDeserializer;
+    }
+
 }
